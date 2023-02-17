@@ -29,27 +29,27 @@ class MainActivity : AppCompatActivity() {
             changeText = if (changeText == "X") "O" else "X"
             if (button1.text == "X" && button2.text == "X" && button3.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button1,button2,button3)
+                colored(button1,button2,button3,accText)
             }
             else if (button1.text == "X" && button4.text == "X" && button7.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button1,button4,button7)
+                colored(button1,button4,button7,accText)
             }
             else if (button1.text == "X" && button5.text == "X" && button9.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button1,button5,button9)
+                colored(button1,button5,button9,accText)
             }
             else if (button1.text == "O" && button2.text == "O" && button3.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button1,button2,button3)
+                colored(button1,button2,button3,accText)
             }
             else if (button1.text == "O" && button4.text == "O" && button7.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button1,button4,button7)
+                colored(button1,button4,button7,accText)
             }
             else if (button1.text == "O" && button5.text == "O" && button9.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button9,button5,button1)
+                colored(button9,button5,button1,accText)
             }
         }
         button2.setOnClickListener {
@@ -57,19 +57,19 @@ class MainActivity : AppCompatActivity() {
             changeText = if (changeText == "X") "O" else "X"
             if (button1.text == "X" && button2.text == "X" && button3.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button3,button2,button1)
+                colored(button3,button2,button1,accText)
             }
             else if (button2.text == "X" && button5.text == "X" && button8.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button2,button5,button8)
+                colored(button2,button5,button8,accText)
             }
             else if (button1.text == "O" && button2.text == "O" && button3.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button1,button3,button2)
+                colored(button1,button3,button2,accText)
             }
             else if (button2.text == "O" && button5.text == "O" && button8.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button2,button5,button8)
+                colored(button2,button5,button8,accText)
             }
         }
         button3.setOnClickListener {
@@ -77,27 +77,27 @@ class MainActivity : AppCompatActivity() {
             changeText = if (changeText == "X") "O" else "X"
             if (button1.text == "X" && button2.text == "X" && button3.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button3,button2,button1)
+                colored(button3,button2,button1,accText)
             }
             else if (button3.text == "X" && button6.text == "X" && button9.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button9,button6,button3)
+                colored(button9,button6,button3,accText)
             }
             else if (button3.text == "X" && button5.text == "X" && button7.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button7,button5,button3)
+                colored(button7,button5,button3,accText)
             }
             else if (button1.text == "O" && button2.text == "O" && button3.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button1,button2,button3)
+                colored(button1,button2,button3,accText)
             }
             else if (button3.text == "O" && button6.text == "O" && button9.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button9,button6,button3)
+                colored(button9,button6,button3,accText)
             }
             else if (button3.text == "O" && button5.text == "O" && button7.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button7,button5,button3)
+                colored(button7,button5,button3,accText)
             }
         }
         button4.setOnClickListener {
@@ -105,19 +105,19 @@ class MainActivity : AppCompatActivity() {
             changeText = if (changeText == "X") "O" else "X"
             if (button1.text == "X" && button4.text == "X" && button7.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button1,button4,button7)
+                colored(button1,button4,button7,accText)
             }
             else if (button4.text == "X" && button5.text == "X" && button6.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button4,button5,button6)
+                colored(button4,button5,button6,accText)
             }
             else if (button1.text == "O" && button4.text == "O" && button7.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button1,button4,button7)
+                colored(button1,button4,button7,accText)
             }
             else if (button4.text == "O" && button5.text == "O" && button6.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button6,button5,button4)
+                colored(button6,button5,button4,accText)
             }
         }
         button5.setOnClickListener {
@@ -125,35 +125,35 @@ class MainActivity : AppCompatActivity() {
             changeText = if (changeText == "X") "O" else "X"
             if (button5.text == "X" && button6.text == "X" && button4.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button6,button5,button4)
+                colored(button6,button5,button4,accText)
             }
             else if (button5.text == "X" && button8.text == "X" && button2.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button2,button5,button8)
+                colored(button2,button5,button8,accText)
             }
             else if (button5.text == "X" && button3.text == "X" && button7.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button3,button5,button7)
+                colored(button3,button5,button7,accText)
             }
             else if (button5.text == "X" && button9.text == "X" && button1.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button9,button5,button1)
+                colored(button9,button5,button1,accText)
             }
             else if (button5.text == "O" && button6.text == "O" && button4.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button6,button5,button4)
+                colored(button6,button5,button4,accText)
             }
             else if (button5.text == "O" && button8.text == "O" && button2.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button8,button5,button2)
+                colored(button8,button5,button2,accText)
             }
             else if (button5.text == "O" && button3.text == "O" && button7.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button7,button5,button3)
+                colored(button7,button5,button3,accText)
             }
             else if (button5.text == "O" && button9.text == "O" && button1.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button9,button5,button1)
+                colored(button9,button5,button1,accText)
             }
         }
         button6.setOnClickListener {
@@ -161,19 +161,19 @@ class MainActivity : AppCompatActivity() {
             changeText = if (changeText == "X") "O" else "X"
             if (button3.text == "X" && button6.text == "X" && button9.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button9,button3,button6)
+                colored(button9,button3,button6,accText)
             }
             else if (button4.text == "X" && button5.text == "X" && button6.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button6,button5,button4)
+                colored(button6,button5,button4,accText)
             }
             else if (button3.text == "O" && button6.text == "O" && button9.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button9,button3,button6)
+                colored(button9,button3,button6,accText)
             }
             else if (button4.text == "O" && button5.text == "O" && button6.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button4,button5,button6)
+                colored(button4,button5,button6,accText)
             }
         }
         button7.setOnClickListener {
@@ -181,27 +181,27 @@ class MainActivity : AppCompatActivity() {
             changeText = if (changeText == "X") "O" else "X"
             if (button7.text == "X" && button8.text == "X" && button9.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button9,button8,button7)
+                colored(button9,button8,button7,accText)
             }
             else if (button7.text == "X" && button4.text == "X" && button1.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button4,button7,button1)
+                colored(button4,button7,button1,accText)
             }
             else if (button7.text == "X" && button5.text == "X" && button3.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button7,button5,button3)
+                colored(button7,button5,button3,accText)
             }
             else if (button7.text == "O" && button8.text == "O" && button9.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button9,button8,button7)
+                colored(button9,button8,button7,accText)
             }
             else if (button7.text == "O" && button4.text == "O" && button1.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button4,button7,button1)
+                colored(button4,button7,button1,accText)
             }
             else if (button7.text == "O" && button5.text == "O" && button3.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button7,button5,button3)
+                colored(button7,button5,button3,accText)
             }
         }
         button8.setOnClickListener {
@@ -209,19 +209,19 @@ class MainActivity : AppCompatActivity() {
             changeText = if (changeText == "X") "O" else "X"
             if (button8.text == "X" && button5.text == "X" && button2.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button8,button5,button2)
+                colored(button8,button5,button2,accText)
             }
             else if (button7.text == "X" && button8.text == "X" && button9.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button9,button7,button8)
+                colored(button9,button7,button8,accText)
             }
             else if (button8.text == "O" && button5.text == "O" && button2.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button8,button5,button2)
+                colored(button8,button5,button2,accText)
             }
             else if (button7.text == "O" && button8.text == "O" && button9.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button9,button7,button8)
+                colored(button9,button7,button8,accText)
             }
         }
         button9.setOnClickListener {
@@ -229,27 +229,27 @@ class MainActivity : AppCompatActivity() {
             changeText = if (changeText == "X") "O" else "X"
             if (button9.text == "X" && button6.text == "X" && button3.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button9,button6,button3)
+                colored(button9,button6,button3,accText)
             }
             else if (button9.text == "X" && button8.text == "X" && button7.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button9,button8,button7)
+                colored(button9,button8,button7,accText)
             }
             else if (button9.text == "X" && button5.text == "X" && button1.text == "X" ) {
                 accText.text = "X Accepted"
-                colored(button9,button5,button1)
+                colored(button9,button5,button1,accText)
             }
             else if (button9.text == "O" && button6.text == "O" && button3.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button9,button6,button3)
+                colored(button9,button6,button3,accText)
             }
             else if (button9.text == "O" && button8.text == "O" && button7.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button9,button8,button7)
+                colored(button9,button8,button7,accText)
             }
             else if (button9.text == "O" && button5.text == "O" && button1.text == "O" ) {
                 accText.text = "O Accepted"
-                colored(button9,button5,button1)
+                colored(button9,button5,button1,accText)
             }
         }
         val restart: Button = findViewById(R.id.restart)
@@ -261,8 +261,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-fun colored(colorButton1: Button , colorButton2: Button , colorButton3: Button) {
+fun colored(colorButton1: Button , colorButton2: Button , colorButton3: Button , accText: TextView) {
     colorButton1.setBackgroundColor(Color.GREEN)
     colorButton2.setBackgroundColor(Color.GREEN)
     colorButton3.setBackgroundColor(Color.GREEN)
+    accText.setBackgroundColor(Color.GREEN)
 }
