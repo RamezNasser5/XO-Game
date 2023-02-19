@@ -27,230 +27,65 @@ class MainActivity : AppCompatActivity() {
         button1.setOnClickListener {
             button1.text = changeText
             changeText = if (changeText == "X") "O" else "X"
-            if (button1.text == "X" && button2.text == "X" && button3.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button1,button2,button3,accText)
-            }
-            else if (button1.text == "X" && button4.text == "X" && button7.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button1,button4,button7,accText)
-            }
-            else if (button1.text == "X" && button5.text == "X" && button9.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button1,button5,button9,accText)
-            }
-            else if (button1.text == "O" && button2.text == "O" && button3.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button1,button2,button3,accText)
-            }
-            else if (button1.text == "O" && button4.text == "O" && button7.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button1,button4,button7,accText)
-            }
-            else if (button1.text == "O" && button5.text == "O" && button9.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button9,button5,button1,accText)
-            }
+            testWinner(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
+            button1.isEnabled = false
+            testDraw(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
         }
         button2.setOnClickListener {
             button2.text = changeText
             changeText = if (changeText == "X") "O" else "X"
-            if (button1.text == "X" && button2.text == "X" && button3.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button3,button2,button1,accText)
-            }
-            else if (button2.text == "X" && button5.text == "X" && button8.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button2,button5,button8,accText)
-            }
-            else if (button1.text == "O" && button2.text == "O" && button3.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button1,button3,button2,accText)
-            }
-            else if (button2.text == "O" && button5.text == "O" && button8.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button2,button5,button8,accText)
-            }
+            testWinner(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
+            button2.isEnabled = false
+            testDraw(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
         }
         button3.setOnClickListener {
             button3.text = changeText
             changeText = if (changeText == "X") "O" else "X"
-            if (button1.text == "X" && button2.text == "X" && button3.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button3,button2,button1,accText)
-            }
-            else if (button3.text == "X" && button6.text == "X" && button9.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button9,button6,button3,accText)
-            }
-            else if (button3.text == "X" && button5.text == "X" && button7.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button7,button5,button3,accText)
-            }
-            else if (button1.text == "O" && button2.text == "O" && button3.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button1,button2,button3,accText)
-            }
-            else if (button3.text == "O" && button6.text == "O" && button9.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button9,button6,button3,accText)
-            }
-            else if (button3.text == "O" && button5.text == "O" && button7.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button7,button5,button3,accText)
-            }
+            testWinner(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
+            button3.isEnabled = false
+            testDraw(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
         }
         button4.setOnClickListener {
             button4.text = changeText
             changeText = if (changeText == "X") "O" else "X"
-            if (button1.text == "X" && button4.text == "X" && button7.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button1,button4,button7,accText)
-            }
-            else if (button4.text == "X" && button5.text == "X" && button6.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button4,button5,button6,accText)
-            }
-            else if (button1.text == "O" && button4.text == "O" && button7.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button1,button4,button7,accText)
-            }
-            else if (button4.text == "O" && button5.text == "O" && button6.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button6,button5,button4,accText)
-            }
+            testWinner(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
+            button4.isEnabled = false
+            testDraw(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
         }
         button5.setOnClickListener {
             button5.text = changeText
             changeText = if (changeText == "X") "O" else "X"
-            if (button5.text == "X" && button6.text == "X" && button4.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button6,button5,button4,accText)
-            }
-            else if (button5.text == "X" && button8.text == "X" && button2.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button2,button5,button8,accText)
-            }
-            else if (button5.text == "X" && button3.text == "X" && button7.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button3,button5,button7,accText)
-            }
-            else if (button5.text == "X" && button9.text == "X" && button1.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button9,button5,button1,accText)
-            }
-            else if (button5.text == "O" && button6.text == "O" && button4.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button6,button5,button4,accText)
-            }
-            else if (button5.text == "O" && button8.text == "O" && button2.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button8,button5,button2,accText)
-            }
-            else if (button5.text == "O" && button3.text == "O" && button7.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button7,button5,button3,accText)
-            }
-            else if (button5.text == "O" && button9.text == "O" && button1.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button9,button5,button1,accText)
-            }
+            testWinner(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
+            button5.isEnabled = false
+            testDraw(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
         }
         button6.setOnClickListener {
             button6.text = changeText
             changeText = if (changeText == "X") "O" else "X"
-            if (button3.text == "X" && button6.text == "X" && button9.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button9,button3,button6,accText)
-            }
-            else if (button4.text == "X" && button5.text == "X" && button6.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button6,button5,button4,accText)
-            }
-            else if (button3.text == "O" && button6.text == "O" && button9.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button9,button3,button6,accText)
-            }
-            else if (button4.text == "O" && button5.text == "O" && button6.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button4,button5,button6,accText)
-            }
+            testWinner(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
+            button6.isEnabled = false
+            testDraw(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
         }
         button7.setOnClickListener {
             button7.text = changeText
             changeText = if (changeText == "X") "O" else "X"
-            if (button7.text == "X" && button8.text == "X" && button9.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button9,button8,button7,accText)
-            }
-            else if (button7.text == "X" && button4.text == "X" && button1.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button4,button7,button1,accText)
-            }
-            else if (button7.text == "X" && button5.text == "X" && button3.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button7,button5,button3,accText)
-            }
-            else if (button7.text == "O" && button8.text == "O" && button9.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button9,button8,button7,accText)
-            }
-            else if (button7.text == "O" && button4.text == "O" && button1.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button4,button7,button1,accText)
-            }
-            else if (button7.text == "O" && button5.text == "O" && button3.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button7,button5,button3,accText)
-            }
+            testWinner(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
+            button7.isEnabled = false
+            testDraw(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
         }
         button8.setOnClickListener {
             button8.text = changeText
             changeText = if (changeText == "X") "O" else "X"
-            if (button8.text == "X" && button5.text == "X" && button2.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button8,button5,button2,accText)
-            }
-            else if (button7.text == "X" && button8.text == "X" && button9.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button9,button7,button8,accText)
-            }
-            else if (button8.text == "O" && button5.text == "O" && button2.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button8,button5,button2,accText)
-            }
-            else if (button7.text == "O" && button8.text == "O" && button9.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button9,button7,button8,accText)
-            }
+            testWinner(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
+            button8.isEnabled = false
+            testDraw(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
         }
         button9.setOnClickListener {
             button9.text = changeText
             changeText = if (changeText == "X") "O" else "X"
-            if (button9.text == "X" && button6.text == "X" && button3.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button9,button6,button3,accText)
-            }
-            else if (button9.text == "X" && button8.text == "X" && button7.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button9,button8,button7,accText)
-            }
-            else if (button9.text == "X" && button5.text == "X" && button1.text == "X" ) {
-                accText.text = "X Accepted"
-                colored(button9,button5,button1,accText)
-            }
-            else if (button9.text == "O" && button6.text == "O" && button3.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button9,button6,button3,accText)
-            }
-            else if (button9.text == "O" && button8.text == "O" && button7.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button9,button8,button7,accText)
-            }
-            else if (button9.text == "O" && button5.text == "O" && button1.text == "O" ) {
-                accText.text = "O Accepted"
-                colored(button9,button5,button1,accText)
-            }
+            testWinner(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
+            button9.isEnabled = false
+            testDraw(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
         }
         val restart: Button = findViewById(R.id.restart)
         restart.setOnClickListener {
@@ -266,4 +101,94 @@ fun colored(colorButton1: Button , colorButton2: Button , colorButton3: Button ,
     colorButton2.setBackgroundColor(Color.GREEN)
     colorButton3.setBackgroundColor(Color.GREEN)
     accText.setBackgroundColor(Color.GREEN)
+}
+@SuppressLint("SetTextI18n")
+fun testWinner(
+    t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
+    t_button6: Button,t_button7: Button,t_button8: Button,t_button9: Button,accText: TextView
+) {
+    if (t_button1.text == t_button2.text && t_button2.text == t_button3.text ) {
+        accText.text = "${t_button1.text} Winner"
+        colored(t_button1,t_button2,t_button3,accText)
+        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+    }
+    else if (t_button4.text == t_button5.text && t_button5.text == t_button6.text) {
+        accText.text = "${t_button4.text} Winner"
+        colored(t_button4,t_button5,t_button6,accText)
+        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+    }
+    else if (t_button7.text == t_button8.text && t_button8.text == t_button9.text) {
+        accText.text = "${t_button7.text} Winner"
+        colored(t_button7,t_button8,t_button9,accText)
+        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+    }
+    else if (t_button1.text == t_button4.text && t_button4.text == t_button7.text) {
+        accText.text = "${t_button1.text} Winner"
+        colored(t_button1,t_button4,t_button7,accText)
+        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+    }
+    else if (t_button2.text == t_button5.text && t_button5.text == t_button8.text) {
+        accText.text = "${t_button2.text} Winner"
+        colored(t_button2,t_button5,t_button8,accText)
+        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+    }
+    else if (t_button3.text == t_button6.text && t_button6.text == t_button9.text) {
+        accText.text = "${t_button3.text} Winner"
+        colored(t_button3,t_button6,t_button9,accText)
+        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+    }
+    else if (t_button1.text == t_button5.text && t_button5.text == t_button9.text) {
+        accText.text = "${t_button1.text} Winner"
+        colored(t_button1,t_button5,t_button9,accText)
+        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+    }
+    else if (t_button3.text == t_button5.text && t_button5.text == t_button7.text) {
+        accText.text = "${t_button3.text} Winner"
+        colored(t_button3,t_button5,t_button7,accText)
+    }
+}
+fun coloredDraw (
+    t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
+    t_button6: Button,t_button7: Button,t_button8: Button,t_button9: Button,accText: TextView
+) {
+    t_button1.setBackgroundColor(Color.RED)
+    t_button2.setBackgroundColor(Color.RED)
+    t_button3.setBackgroundColor(Color.RED)
+    t_button4.setBackgroundColor(Color.RED)
+    t_button5.setBackgroundColor(Color.RED)
+    t_button6.setBackgroundColor(Color.RED)
+    t_button7.setBackgroundColor(Color.RED)
+    t_button8.setBackgroundColor(Color.RED)
+    t_button9.setBackgroundColor(Color.RED)
+    accText.setBackgroundColor(Color.RED)
+}
+@SuppressLint("SetTextI18n")
+fun testDraw(
+    t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
+    t_button6: Button,t_button7: Button,t_button8: Button,t_button9: Button,accText: TextView
+) {
+    if (
+        t_button1.text != "1" && t_button2.text != "2" && t_button3.text != "3" &&
+        t_button4.text != "4" && t_button5.text != "5" && t_button6.text != "6" &&
+        t_button7.text != "7" && t_button8.text != "8" && t_button9.text != "9"
+    ) {
+        accText.text = "DRAW"
+        coloredDraw(
+            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9,accText
+        )
+    }
+}
+fun testFinish(
+    t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
+    t_button6: Button,t_button7: Button,t_button8: Button,t_button9: Button
+) {
+    t_button1.isEnabled = false
+    t_button2.isEnabled = false
+    t_button3.isEnabled = false
+    t_button4.isEnabled = false
+    t_button5.isEnabled = false
+    t_button6.isEnabled = false
+    t_button7.isEnabled = false
+    t_button8.isEnabled = false
+    t_button9.isEnabled = false
 }
