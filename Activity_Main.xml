@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <TextView
@@ -25,34 +25,36 @@
 
         <Button
             android:id="@+id/button1"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Theme.XOGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
+            android:backgroundTint="@color/material_dynamic_neutral20"
             android:text="@string/_1"
             android:textSize="50sp" />
 
         <Button
             android:id="@+id/button2"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Theme.XOGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
+            android:backgroundTint="@color/material_dynamic_neutral20"
             android:text="@string/_2"
             android:textSize="50sp" />
 
         <Button
             android:id="@+id/button3"
+            style="@style/Theme.XOGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
+            android:backgroundTint="@color/material_dynamic_neutral20"
             android:text="@string/_3"
-            android:textSize="50sp"
-            style="@style/Widget.AppCompat.Button.Colored"
-            />
+            android:textSize="50sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,36 +64,36 @@
 
         <Button
             android:id="@+id/button4"
+            style="@style/Theme.XOGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
+            android:backgroundTint="@color/material_dynamic_neutral20"
             android:text="@string/_4"
-            android:textSize="50sp"
-            style="@style/Widget.AppCompat.Button.Colored"
-            />
+            android:textSize="50sp" />
 
         <Button
             android:id="@+id/button5"
+            style="@style/Theme.XOGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
+            android:backgroundTint="@color/material_dynamic_neutral20"
             android:text="@string/_5"
-            android:textSize="50sp"
-            style="@style/Widget.AppCompat.Button.Colored"
-            />
+            android:textSize="50sp" />
 
         <Button
             android:id="@+id/button6"
+            style="@style/Theme.XOGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
+            android:backgroundTint="@color/material_dynamic_neutral20"
             android:text="@string/_6"
-            android:textSize="50sp"
-            style="@style/Widget.AppCompat.Button.Colored"
-            />
+            android:textSize="50sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -101,38 +103,41 @@
 
         <Button
             android:id="@+id/button7"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Theme.XOGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
+            android:backgroundTint="@color/material_dynamic_neutral20"
             android:text="@string/_7"
             android:textSize="50sp" />
 
         <Button
             android:id="@+id/button8"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Theme.XOGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
+            android:backgroundTint="@color/material_dynamic_neutral20"
             android:text="@string/_8"
             android:textSize="50sp" />
 
         <Button
             android:id="@+id/button9"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Theme.XOGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:layout_weight="1"
+            android:backgroundTint="@color/material_dynamic_neutral_variant20"
             android:text="@string/_9"
             android:textSize="50sp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/accepted_id"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50sp"
         android:gravity="center"
