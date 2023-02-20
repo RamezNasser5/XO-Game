@@ -110,37 +110,51 @@ fun testWinner(
     if (t_button1.text == t_button2.text && t_button2.text == t_button3.text ) {
         accText.text = "${t_button1.text} Winner"
         colored(t_button1,t_button2,t_button3,accText)
-        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+        testFinish(
+            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
+        )
     }
     else if (t_button4.text == t_button5.text && t_button5.text == t_button6.text) {
         accText.text = "${t_button4.text} Winner"
         colored(t_button4,t_button5,t_button6,accText)
-        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+        testFinish(
+            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
+        )
     }
     else if (t_button7.text == t_button8.text && t_button8.text == t_button9.text) {
         accText.text = "${t_button7.text} Winner"
         colored(t_button7,t_button8,t_button9,accText)
-        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+        testFinish(
+            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
+        )
     }
     else if (t_button1.text == t_button4.text && t_button4.text == t_button7.text) {
         accText.text = "${t_button1.text} Winner"
         colored(t_button1,t_button4,t_button7,accText)
-        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+        testFinish(
+            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
+        )
     }
     else if (t_button2.text == t_button5.text && t_button5.text == t_button8.text) {
         accText.text = "${t_button2.text} Winner"
         colored(t_button2,t_button5,t_button8,accText)
-        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+        testFinish(
+            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
+        )
     }
     else if (t_button3.text == t_button6.text && t_button6.text == t_button9.text) {
         accText.text = "${t_button3.text} Winner"
         colored(t_button3,t_button6,t_button9,accText)
-        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+        testFinish(
+            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
+        )
     }
     else if (t_button1.text == t_button5.text && t_button5.text == t_button9.text) {
         accText.text = "${t_button1.text} Winner"
         colored(t_button1,t_button5,t_button9,accText)
-        testFinish(t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+        testFinish(
+            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
+        )
     }
     else if (t_button3.text == t_button5.text && t_button5.text == t_button7.text) {
         accText.text = "${t_button3.text} Winner"
@@ -151,15 +165,12 @@ fun coloredDraw (
     t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
     t_button6: Button,t_button7: Button,t_button8: Button,t_button9: Button,accText: TextView
 ) {
-    t_button1.setBackgroundColor(Color.RED)
-    t_button2.setBackgroundColor(Color.RED)
-    t_button3.setBackgroundColor(Color.RED)
-    t_button4.setBackgroundColor(Color.RED)
-    t_button5.setBackgroundColor(Color.RED)
-    t_button6.setBackgroundColor(Color.RED)
-    t_button7.setBackgroundColor(Color.RED)
-    t_button8.setBackgroundColor(Color.RED)
-    t_button9.setBackgroundColor(Color.RED)
+    val buttons = mutableListOf(
+        t_button1,t_button2,t_button3,t_button4,t_button5,t_button6,t_button7,t_button8,t_button9
+    )
+    for (i in buttons.indices) {
+        buttons[i].setBackgroundColor(Color.RED)
+    }
     accText.setBackgroundColor(Color.RED)
 }
 @SuppressLint("SetTextI18n")
@@ -182,13 +193,10 @@ fun testFinish(
     t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
     t_button6: Button,t_button7: Button,t_button8: Button,t_button9: Button
 ) {
-    t_button1.isEnabled = false
-    t_button2.isEnabled = false
-    t_button3.isEnabled = false
-    t_button4.isEnabled = false
-    t_button5.isEnabled = false
-    t_button6.isEnabled = false
-    t_button7.isEnabled = false
-    t_button8.isEnabled = false
-    t_button9.isEnabled = false
+    val buttons = mutableListOf(
+        t_button1,t_button2,t_button3,t_button4,t_button5,t_button6,t_button7,t_button8,t_button9
+    )
+    for (i in buttons.indices) {
+        buttons[i].isEnabled = false
+    }
 }
