@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             finish()
             startActivity(intent)
             overridePendingTransition(0,1)
-            Toast.makeText(this, "current ${System.currentTimeMillis()}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "replay successfully", Toast.LENGTH_SHORT).show()
         }
     }
     private fun setListener(
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 item.isEnabled = false
                 testDraw(
                     t_button1,t_button2,t_button3,t_button4,t_button5,t_button6,
-                    t_button7,t_button8,t_button9,accText,checkComplete
+                    t_button7,t_button8,t_button9,accText,checkComplete,item
                 )
             }
         }
@@ -71,20 +71,21 @@ fun testWinner(
     t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
     t_button6: Button,t_button7: Button,t_button8: Button,t_button9: Button,
     accText: TextView,item: Button
-) {
+): Boolean {
     if (t_button1.text == "X" && t_button2.text == "X" && t_button3.text == "X") {
         accText.text = "${item.text} Winner"
         colored(t_button1,t_button2,t_button3,accText)
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
         )
+        return true
     }
     else if (t_button1.text == "O" && t_button2.text == "O" && t_button3.text == "O") {
         accText.text = "${item.text} Winner"
         colored(t_button1,t_button2,t_button3,accText)
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-
+        return true
     }
     else if (t_button4.text == "X" && t_button5.text == "X" && t_button6.text == "X") {
         accText.text = "${item.text} Winner"
@@ -92,14 +93,14 @@ fun testWinner(
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
         )
-
+        return true
     }
     else if (t_button4.text == "O" && t_button5.text == "O" && t_button6.text == "O") {
         accText.text = "${item.text} Winner"
         colored(t_button4,t_button5,t_button6,accText)
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-
+        return true
     }
     else if (t_button7.text == "X" && t_button8.text == "X" && t_button9.text == "X") {
         accText.text = "${item.text} Winner"
@@ -107,14 +108,14 @@ fun testWinner(
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
         )
-
+        return true
     }
     else if (t_button7.text == "O" && t_button8.text == "O" && t_button9.text == "O") {
         accText.text = "${item.text} Winner"
         colored(t_button7,t_button8,t_button9,accText)
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-
+        return true
     }
     else if (t_button1.text == "X" && t_button4.text == "X" && t_button7.text == "X") {
         accText.text = "${item.text} Winner"
@@ -122,14 +123,14 @@ fun testWinner(
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
         )
-
+        return true
     }
     else if (t_button1.text == "O" && t_button4.text == "O" && t_button7.text == "O") {
         accText.text = "${item.text} Winner"
         colored(t_button1,t_button4,t_button7,accText)
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-
+        return true
     }
     else if (t_button2.text == "X" && t_button5.text == "X" && t_button8.text == "X") {
         accText.text = "${item.text} Winner"
@@ -137,14 +138,14 @@ fun testWinner(
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
         )
-
+        return true
     }
     else if (t_button2.text == "O" && t_button5.text == "O" && t_button8.text == "O") {
         accText.text = "${item.text} Winner"
         colored(t_button2,t_button5,t_button8,accText)
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-
+        return true
     }
     else if (t_button3.text == "X" && t_button6.text == "X" && t_button9.text == "X") {
         accText.text = "${item.text} Winner"
@@ -152,14 +153,14 @@ fun testWinner(
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
         )
-
+        return true
     }
     else if (t_button3.text == "O" && t_button6.text == "O" && t_button9.text == "O") {
         accText.text = "${item.text} Winner"
         colored(t_button3,t_button6,t_button9,accText)
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-
+        return true
     }
     else if (t_button1.text == "X" && t_button5.text == "X" && t_button9.text == "X") {
         accText.text = "${item.text} Winner"
@@ -167,14 +168,14 @@ fun testWinner(
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
         )
-
+        return true
     }
     else if (t_button1.text == "O" && t_button5.text == "O" && t_button9.text == "O") {
         accText.text = "${item.text} Winner"
         colored(t_button1,t_button5,t_button9,accText)
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-
+        return true
     }
     else if (t_button3.text == "X" && t_button5.text == "X" && t_button7.text == "X") {
         accText.text = "${item.text} Winner"
@@ -182,15 +183,16 @@ fun testWinner(
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
         )
-
+        return true
     }
     else if (t_button3.text == "O" && t_button5.text == "O" && t_button7.text == "O") {
         accText.text = "${item.text} Winner"
         colored(t_button3,t_button5,t_button7,accText)
         testFinish(
             t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-
+        return true
     }
+    return false
 }
 fun coloredDraw (
     t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
@@ -208,13 +210,25 @@ fun coloredDraw (
 fun testDraw(
     t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,
     t_button5: Button , t_button6: Button,t_button7: Button,t_button8: Button,
-    t_button9: Button,accText: TextView,checkComplete: Int
+    t_button9: Button,accText: TextView,checkComplete: Int,item: Button
 ) {
     if (checkComplete == 9) {
+        if (testWinner(
+            t_button1,t_button2,t_button3,t_button4,t_button5,
+            t_button6, t_button7,t_button8,t_button9,accText,item
+        )) {
+            testWinner(
+                t_button1,t_button2,t_button3,t_button4,t_button5,
+                t_button6, t_button7,t_button8,t_button9,accText,item
+            )
+        }
+        else {
         accText.text = "DRAW"
         coloredDraw(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9,accText
+            t_button1, t_button2,t_button3,t_button4,t_button5 ,
+            t_button6,t_button7,t_button8,t_button9,accText
         )
+        }
     }
 }
 fun testFinish(
