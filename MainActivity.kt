@@ -13,17 +13,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val button1: Button = findViewById(R.id.button1)
-        val button2: Button = findViewById(R.id.button2)
-        val button3: Button = findViewById(R.id.button3)
-        val button4: Button = findViewById(R.id.button4)
-        val button5: Button = findViewById(R.id.button5)
-        val button6: Button = findViewById(R.id.button6)
-        val button7: Button = findViewById(R.id.button7)
-        val button8: Button = findViewById(R.id.button8)
-        val button9: Button = findViewById(R.id.button9)
+        val buttons = mutableListOf<Button>(
+            findViewById(R.id.button1),findViewById(R.id.button2),findViewById(R.id.button3),
+            findViewById(R.id.button4),findViewById(R.id.button5),findViewById(R.id.button6),
+            findViewById(R.id.button7),findViewById(R.id.button8),findViewById(R.id.button9)
+        )
         val accText: TextView = findViewById(R.id.accepted_id)
-        setListener(button1,button2,button3,button4,button5,button6,button7,button8,button9,accText)
+        setListener(buttons,accText)
         val restart: Button = findViewById(R.id.restart)
         restart.setOnClickListener {
             finish()
@@ -33,13 +29,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun setListener(
-        t_button1: Button,t_button2: Button,t_button3: Button,t_button4: Button,
-        t_button5: Button,t_button6: Button,t_button7: Button,t_button8: Button,
-        t_button9: Button,accText: TextView
+        buttons:List<Button>,accText: TextView
     ) {
-       val buttons = mutableListOf(
-           t_button1,t_button2,t_button3,t_button4,t_button5,t_button6,t_button7,t_button8,t_button9
-       )
         var changeText = "X"
         var checkComplete = 0
         for (item in buttons) {
@@ -47,15 +38,9 @@ class MainActivity : AppCompatActivity() {
                 checkComplete++
                 item.text = changeText
                 changeText = if (changeText == "X") "O" else "X"
-                testWinner(
-                    t_button1,t_button2,t_button3,t_button4,t_button5,
-                    t_button6, t_button7,t_button8,t_button9,accText,item
-                )
+                testWinner(buttons,accText,item)
                 item.isEnabled = false
-                testDraw(
-                    t_button1,t_button2,t_button3,t_button4,t_button5,t_button6,
-                    t_button7,t_button8,t_button9,accText,checkComplete,item
-                )
+                testDraw(buttons,accText,checkComplete,item)
             }
         }
     }
@@ -67,140 +52,110 @@ fun colored(colorButton1: Button , colorButton2: Button , colorButton3: Button ,
     accText.setBackgroundColor(Color.GREEN)
 }
 @SuppressLint("SetTextI18n")
-fun testWinner(
-    t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
-    t_button6: Button,t_button7: Button,t_button8: Button,t_button9: Button,
-    accText: TextView,item: Button
-): Boolean {
-    if (t_button1.text == "X" && t_button2.text == "X" && t_button3.text == "X") {
+fun testWinner(buttons: List<Button>, accText: TextView, item: Button): Boolean {
+    if (buttons[0].text == "X" && buttons[1].text == "X" && buttons[2].text == "X") {
         accText.text = "${item.text} Winner"
-        colored(t_button1,t_button2,t_button3,accText)
+        colored(buttons[0],buttons[1],buttons[2],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[0].text == "O" && buttons[1].text == "O" && buttons[2].text == "O") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[0],buttons[1],buttons[2],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[3].text == "X" && buttons[4].text == "X" && buttons[5].text == "X") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[3],buttons[4],buttons[5],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[3].text == "O" && buttons[4].text == "O" && buttons[5].text == "O") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[3],buttons[4],buttons[5],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[6].text == "X" && buttons[7].text == "X" && buttons[8].text == "X") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[6],buttons[7],buttons[8],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[6].text == "O" && buttons[7].text == "O" && buttons[8].text == "O") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[6],buttons[7],buttons[8],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[0].text == "X" && buttons[3].text == "X" && buttons[6].text == "X") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[0],buttons[3],buttons[6],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[0].text == "O" && buttons[3].text == "O" && buttons[6].text == "O") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[0],buttons[3],buttons[6],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[0].text == "X" && buttons[3].text == "X" && buttons[6].text == "X") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[0],buttons[3],buttons[6],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[0].text == "O" && buttons[3].text == "O" && buttons[6].text == "O") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[0],buttons[3],buttons[6],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[2].text == "X" && buttons[5].text == "X" && buttons[7].text == "X") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[2],buttons[5],buttons[7],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[2].text == "O" && buttons[5].text == "O" && buttons[7].text == "O") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[2],buttons[5],buttons[7],accText)
+        testFinish(buttons)
+        return true
+    }
+    else if (buttons[0].text == "X" && buttons[4].text == "X" && buttons[8].text == "X") {
+        accText.text = "${item.text} Winner"
+        colored(buttons[0],buttons[4],buttons[8],accText)
         testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
+           buttons
         )
         return true
     }
-    else if (t_button1.text == "O" && t_button2.text == "O" && t_button3.text == "O") {
+    else if (buttons[0].text == "O" && buttons[4].text == "O" && buttons[8].text == "O") {
         accText.text = "${item.text} Winner"
-        colored(t_button1,t_button2,t_button3,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+        colored(buttons[0],buttons[4],buttons[8],accText)
+        testFinish(buttons)
         return true
     }
-    else if (t_button4.text == "X" && t_button5.text == "X" && t_button6.text == "X") {
+    else if (buttons[2].text == "X" && buttons[4].text == "X" && buttons[6].text == "X") {
         accText.text = "${item.text} Winner"
-        colored(t_button4,t_button5,t_button6,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
-        )
+        colored(buttons[2],buttons[4],buttons[6],accText)
+        testFinish(buttons)
         return true
     }
-    else if (t_button4.text == "O" && t_button5.text == "O" && t_button6.text == "O") {
+    else if (buttons[2].text == "O" && buttons[4].text == "O" && buttons[6].text == "O") {
         accText.text = "${item.text} Winner"
-        colored(t_button4,t_button5,t_button6,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-        return true
-    }
-    else if (t_button7.text == "X" && t_button8.text == "X" && t_button9.text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(t_button7,t_button8,t_button9,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
-        )
-        return true
-    }
-    else if (t_button7.text == "O" && t_button8.text == "O" && t_button9.text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(t_button7,t_button8,t_button9,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-        return true
-    }
-    else if (t_button1.text == "X" && t_button4.text == "X" && t_button7.text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(t_button1,t_button4,t_button7,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
-        )
-        return true
-    }
-    else if (t_button1.text == "O" && t_button4.text == "O" && t_button7.text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(t_button1,t_button4,t_button7,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-        return true
-    }
-    else if (t_button2.text == "X" && t_button5.text == "X" && t_button8.text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(t_button2,t_button5,t_button8,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
-        )
-        return true
-    }
-    else if (t_button2.text == "O" && t_button5.text == "O" && t_button8.text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(t_button2,t_button5,t_button8,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-        return true
-    }
-    else if (t_button3.text == "X" && t_button6.text == "X" && t_button9.text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(t_button3,t_button6,t_button9,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
-        )
-        return true
-    }
-    else if (t_button3.text == "O" && t_button6.text == "O" && t_button9.text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(t_button3,t_button6,t_button9,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-        return true
-    }
-    else if (t_button1.text == "X" && t_button5.text == "X" && t_button9.text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(t_button1,t_button5,t_button9,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
-        )
-        return true
-    }
-    else if (t_button1.text == "O" && t_button5.text == "O" && t_button9.text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(t_button1,t_button5,t_button9,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
-        return true
-    }
-    else if (t_button3.text == "X" && t_button5.text == "X" && t_button7.text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(t_button3,t_button5,t_button7,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9
-        )
-        return true
-    }
-    else if (t_button3.text == "O" && t_button5.text == "O" && t_button7.text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(t_button3,t_button5,t_button7,accText)
-        testFinish(
-            t_button1, t_button2,t_button3,t_button4,t_button5 , t_button6,t_button7,t_button8,t_button9)
+        colored(buttons[2],buttons[4],buttons[6],accText)
+        testFinish(buttons)
         return true
     }
     return false
 }
 fun coloredDraw (
-    t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
-    t_button6: Button,t_button7: Button,t_button8: Button,t_button9: Button,accText: TextView
+    buttons: List<Button>,accText: TextView
 ) {
-    val buttons = mutableListOf(
-        t_button1,t_button2,t_button3,t_button4,t_button5,t_button6,t_button7,t_button8,t_button9
-    )
     for (i in buttons.indices) {
         buttons[i].setBackgroundColor(Color.RED)
     }
@@ -208,36 +163,19 @@ fun coloredDraw (
 }
 @SuppressLint("SetTextI18n")
 fun testDraw(
-    t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,
-    t_button5: Button , t_button6: Button,t_button7: Button,t_button8: Button,
-    t_button9: Button,accText: TextView,checkComplete: Int,item: Button
+    buttons: List<Button>,accText: TextView,checkComplete: Int,item: Button
 ) {
     if (checkComplete == 9) {
-        if (testWinner(
-            t_button1,t_button2,t_button3,t_button4,t_button5,
-            t_button6, t_button7,t_button8,t_button9,accText,item
-        )) {
-            testWinner(
-                t_button1,t_button2,t_button3,t_button4,t_button5,
-                t_button6, t_button7,t_button8,t_button9,accText,item
-            )
+        if (testWinner(buttons,accText,item)) {
+            testWinner(buttons,accText,item)
         }
         else {
         accText.text = "DRAW"
-        coloredDraw(
-            t_button1, t_button2,t_button3,t_button4,t_button5 ,
-            t_button6,t_button7,t_button8,t_button9,accText
-        )
+        coloredDraw(buttons,accText)
         }
     }
 }
-fun testFinish(
-    t_button1: Button, t_button2: Button,t_button3: Button,t_button4: Button,t_button5: Button ,
-    t_button6: Button,t_button7: Button,t_button8: Button,t_button9: Button
-) {
-    val buttons = mutableListOf(
-        t_button1,t_button2,t_button3,t_button4,t_button5,t_button6,t_button7,t_button8,t_button9
-    )
+fun testFinish(buttons: List<Button>) {
     for (i in buttons.indices) {
         buttons[i].isEnabled = false
     }
