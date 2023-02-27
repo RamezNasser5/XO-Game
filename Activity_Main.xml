@@ -1,182 +1,178 @@
-package com.example.xogame
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-import android.annotation.SuppressLint
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/roboto_bold_italic"
+        android:text="@string/xo_game"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.129" />
 
-class MainActivity : AppCompatActivity() {
-    @SuppressLint("SetTextI18n")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val buttons = mutableListOf<Button>(
-            findViewById(R.id.button1),findViewById(R.id.button2),findViewById(R.id.button3),
-            findViewById(R.id.button4),findViewById(R.id.button5),findViewById(R.id.button6),
-            findViewById(R.id.button7),findViewById(R.id.button8),findViewById(R.id.button9)
-        )
-        val accText: TextView = findViewById(R.id.accepted_id)
-        setListener(buttons,accText)
-        val restart: Button = findViewById(R.id.restart)
-        restart.setOnClickListener {
-            finish()
-            startActivity(intent)
-            overridePendingTransition(0,1)
-            Toast.makeText(this, "replay successfully", Toast.LENGTH_SHORT).show()
-        }
-    }
-    private fun setListener(
-        buttons:List<Button>,accText: TextView
-    ) {
-        var changeText = "X"
-        var checkComplete = 0
-        for (item in buttons) {
-            item.setOnClickListener {
-                checkComplete++
-                item.text = changeText
-                changeText = if (changeText == "X") "O" else "X"
-                testWinner(buttons,accText,item)
-                item.isEnabled = false
-                testDraw(buttons,accText,checkComplete,item)
-            }
-        }
-    }
-}
-fun colored(colorButton1: Button , colorButton2: Button , colorButton3: Button , accText: TextView) {
-    colorButton1.setBackgroundColor(Color.GREEN)
-    colorButton2.setBackgroundColor(Color.GREEN)
-    colorButton3.setBackgroundColor(Color.GREEN)
-    accText.setBackgroundColor(Color.GREEN)
-}
-@SuppressLint("SetTextI18n")
-fun testWinner(buttons: List<Button>, accText: TextView, item: Button): Boolean {
-    if (buttons[0].text == "X" && buttons[1].text == "X" && buttons[2].text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[0],buttons[1],buttons[2],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[0].text == "O" && buttons[1].text == "O" && buttons[2].text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[0],buttons[1],buttons[2],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[3].text == "X" && buttons[4].text == "X" && buttons[5].text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[3],buttons[4],buttons[5],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[3].text == "O" && buttons[4].text == "O" && buttons[5].text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[3],buttons[4],buttons[5],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[6].text == "X" && buttons[7].text == "X" && buttons[8].text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[6],buttons[7],buttons[8],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[6].text == "O" && buttons[7].text == "O" && buttons[8].text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[6],buttons[7],buttons[8],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[0].text == "X" && buttons[3].text == "X" && buttons[6].text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[0],buttons[3],buttons[6],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[0].text == "O" && buttons[3].text == "O" && buttons[6].text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[0],buttons[3],buttons[6],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[0].text == "X" && buttons[3].text == "X" && buttons[6].text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[0],buttons[3],buttons[6],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[0].text == "O" && buttons[3].text == "O" && buttons[6].text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[0],buttons[3],buttons[6],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[2].text == "X" && buttons[5].text == "X" && buttons[7].text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[2],buttons[5],buttons[7],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[2].text == "O" && buttons[5].text == "O" && buttons[7].text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[2],buttons[5],buttons[7],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[0].text == "X" && buttons[4].text == "X" && buttons[8].text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[0],buttons[4],buttons[8],accText)
-        testFinish(
-           buttons
-        )
-        return true
-    }
-    else if (buttons[0].text == "O" && buttons[4].text == "O" && buttons[8].text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[0],buttons[4],buttons[8],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[2].text == "X" && buttons[4].text == "X" && buttons[6].text == "X") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[2],buttons[4],buttons[6],accText)
-        testFinish(buttons)
-        return true
-    }
-    else if (buttons[2].text == "O" && buttons[4].text == "O" && buttons[6].text == "O") {
-        accText.text = "${item.text} Winner"
-        colored(buttons[2],buttons[4],buttons[6],accText)
-        testFinish(buttons)
-        return true
-    }
-    return false
-}
-fun coloredDraw (
-    buttons: List<Button>,accText: TextView
-) {
-    for (i in buttons.indices) {
-        buttons[i].setBackgroundColor(Color.RED)
-    }
-    accText.setBackgroundColor(Color.RED)
-}
-@SuppressLint("SetTextI18n")
-fun testDraw(
-    buttons: List<Button>,accText: TextView,checkComplete: Int,item: Button
-) {
-    if (checkComplete == 9) {
-        if (testWinner(buttons,accText,item)) {
-            testWinner(buttons,accText,item)
-        }
-        else {
-        accText.text = "DRAW"
-        coloredDraw(buttons,accText)
-        }
-    }
-}
-fun testFinish(buttons: List<Button>) {
-    for (i in buttons.indices) {
-        buttons[i].isEnabled = false
-    }
-}
+    <Button
+        android:id="@+id/button1"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/xo_game"
+        android:text="@string/_1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/xo_game"
+        android:text="@string/_2"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.831" />
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/xo_game"
+        android:text="@string/_3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/xo_game"
+        android:text="@string/_4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:contentDescription="@string/xo_game"
+        android:text="@string/_5"
+        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
+
+    <Button
+        android:id="@+id/button6"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/xo_game"
+        android:text="@string/_6"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button7"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/xo_game"
+        android:text="@string/_7"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button8"
+        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button8"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:contentDescription="@string/xo_game"
+        android:text="@string/_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button7"
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button9"
+        style="@style/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/xo_game"
+        android:text="@string/_9"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button8" />
+
+    <TextView
+        android:id="@+id/accepted_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/roboto_bold_italic"
+        android:text="@string/accepted"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8"
+        app:layout_constraintVertical_bias="0.311" />
+
+    <Button
+        android:id="@+id/restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_200"
+        android:fontFamily="@font/roboto_bold_italic"
+        android:text="@string/replay"
+        android:textColor="#A1887F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accepted_id" />
+</androidx.constraintlayout.widget.ConstraintLayout>
